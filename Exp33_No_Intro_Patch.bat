@@ -1,7 +1,7 @@
 @echo off
 
 echo : Clair Obscur: Expedition 33 :
-echo [97m:: No Intro Patch  by Caites ::[m
+echo [97m: No Intro Patch :[m
 echo:&echo:
 
 if exist "%localappdata%\Sandfall\Saved\" (goto patch) else (goto notfound)
