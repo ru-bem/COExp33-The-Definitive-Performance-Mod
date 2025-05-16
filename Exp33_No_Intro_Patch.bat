@@ -25,3 +25,4 @@ echo Verify if the game is installed and try again.
 echo:
 echo Closing this window in 10 seconds...
 timeout /t 10 >nul
+exit
