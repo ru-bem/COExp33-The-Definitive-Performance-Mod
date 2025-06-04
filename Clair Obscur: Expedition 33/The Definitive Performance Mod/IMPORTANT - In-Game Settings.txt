@@ -1,0 +1,29 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::                                                              ::
+::                           COExp 33                           ::
+::          The Definitive Performance Mod - by ru-bem          ::
+::                                                              ::
+::                       In-Game Settings                       ::
+::                                                              ::
+::--------------------------------------------------------------::
+::                                                              ::
+::                                                              ::
+::      Run the game, go to Graphics options and do this:       ::
+::                                                              ::
+::----- Preset:       High (Yes, trust me.)                     ::
+::----- Scaling Type: DLSS or XESS or TSR, in this order.       ::
+::----- Scaling Mode: Quality                                   ::
+::-----                                                         ::
+::----- AAliasing:    Epic                                      ::
+::----- Shadows:      High                                      ::
+::----- GI:           High                                      ::
+::----- Reflection:   Epic                                      ::
+::----- Post Process: Low                                       ::
+::----- Texture:      Epic                                      ::
+::----- Visual FX:    High                                      ::
+::----- Foliage:      High or Medium                            ::
+::----- Shading:      High                                      ::
+::                                                              ::
+::      Have fun!                                               ::
+::                                                              ::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
