@@ -24,6 +24,10 @@
 ::----- Foliage:      High or Medium                            ::
 ::----- Shading:      High                                      ::
 ::                                                              ::
+::                                                              ::
+::      Decrease shadows, gi and Foliage for more performance   ::
+::                                                              ::
+::                                                              ::
 ::      Have fun!                                               ::
 ::                                                              ::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
