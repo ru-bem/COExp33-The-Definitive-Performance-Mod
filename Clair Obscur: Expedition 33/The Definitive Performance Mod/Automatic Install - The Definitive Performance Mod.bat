@@ -76,7 +76,7 @@ echo    All the mod files should exist inside the same folder.
 echo:
 echo:
 echo    %fg%SOLUTION:
-echo    Extract all the files to the same folder and run me again ;^)
+echo    Extract all the files to the same folder and this again ;^)
 echo:
 echo:
 echo    %fw%Press any key to exit.
@@ -87,6 +87,7 @@ exit
 
 :: This will open if the game is not installed.
 :notinstalled
+cls
 call :header
 echo   %fr%The game is not installed.%fw%
 echo   If it's installed, run the game once and try again.
@@ -104,26 +105,27 @@ pause >nul & exit
 :menu
 cls
 call :header
-echo    %fo1%Type a number and press %fw%[ENTER]
+echo     %fo1%Type a number and press %fw%[ENTER]
 echo:
 echo:
-echo    %fo1%[1]%fw% Default%fo0%::::: %fo1%Vanilla Engine.ini settings  -%fw%     0%% Boost
-echo    %fo1%[2]%fw% Lossless%fo0%:::: %fo1%Almost identical to Vanilla  -%fw%  32,5%% Boost
-echo    %fo1%[3]%fw% Quality%fo0%::::: %fo1%Pretty good visual quality   -%fw%  45,0%% Boost
-echo    %fo1%[4]%fw% Performance%fo0%: %fo1%Trade visual for performance -%fw%  67,5%% Boost
-echo    %fo1%[5]%fw% Potato%fo0%:::::: %fo1%For low end pcs              -%fw% 142,5%% Boost
-echo    %fo1%[6]%fw% Monstrosity%fo0%: %fo1%For real, just don't do this -%fw% 252,5%% Boost
+echo     %fo1%[1]%fw% Default%fo0%::::: %fo1%Vanilla Engine.ini settings  -%fw%   0%% Boost
+echo     %fo1%[2]%fw% Lossless%fo0%:::: %fo1%Almost identical to Vanilla  -%fw%  45%% Boost
+echo     %fo1%[3]%fw% Quality%fo0%::::: %fo1%Pretty good visual quality   -%fw%  60%% Boost
+echo     %fo1%[4]%fw% Performance%fo0%: %fo1%Trade visual for performance -%fw%  95%% Boost
+echo     %fo1%[5]%fw% Potato%fo0%:::::: %fo1%For low end PCs              -%fw% 175%% Boost
+echo     %fo1%[6]%fw% Monstrosity%fo0%: %fo1%For real, just don't do this -%fw% 225%% Boost
 echo:
 echo:
-echo    %fo1%[7] IMPORTANT: Optimized In-game Settings
+echo     %fo1%[7] IMPORTANT: USE THIS OPTIMIZED IN-GAME SETTINGS
 echo:
 echo:
-echo    %fo1%[9]%fw% Exit
+echo     %fo1%[8]%fw% More details
+echo     %fo1%[9]%fw% Exit
 echo:
 ::
 
 :: This allows you to make a choice.
-set /p choice=%blf%---%fo1%[
+set /p choice=%blf%----%fo1%[
 ::
 
 
@@ -171,6 +173,7 @@ if %choice%==5 (
 :: Easy-to-read
 if %choice%==6 (goto monstrosity)
 if %choice%==7 (goto settings)
+if %choice%==8 (start https://www.nexusmods.com/clairobscurexpedition33/mods/308 & goto menu)
 if %choice%==9 (exit)
 
 
