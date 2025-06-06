@@ -11,7 +11,7 @@
 :: This lines tells the cmd to show you only the necessary, sets the mod version, window size, page code and the title.
 @echo off
 setlocal EnableDelayedExpansion
-set modver=v1.0.0
+set modver=v1.1.0
 mode con:cols=66 lines=33
 chcp 65001 >nul
 title COExp 33: The Definitive Performance Mod - %modver%
@@ -203,11 +203,13 @@ if %choicem%==1 (
 :settings
 echo %fob2%
 cls
+mode con:cols=66 lines=36
 type "%~dp0IMPORTANT - In-Game Settings.txt"
 echo:
 echo:
 echo %blb%%fw%                     Press any key to go back                     [20C
 pause >nul
+mode con:cols=66 lines=33
 goto menu
 
 
@@ -219,7 +221,7 @@ echo %fob%%fo1%
 echo         █▀▀ ▀▄▀ %fo2%█▀█ %fo3%█▀▀ %fo4%█▀▄ %fo5%▀█▀ %fo4%▀█▀ %fo3%▀█▀ %fo2%▄▀█ %fo1%█▄ █   %fo5%▀██ %fo5%▀██        %fo1%
 echo         ██▄ █ █ %fo2%█▀▀ %fo3%██▄ %fo4%█▄▀ %fo5%▄█▄ %fo4% █  %fo3%▄█▄ %fo2%█▄▀ %fo1%█ ▀█   %fo5%▄▄█ %fo5%▄▄█        %fw%
 echo %fob%%fo1%                                                                  
-echo %fob2%                 %fo3%The Definitive Performance Mod                   
+echo %fob2%                  %fo3%The Definitive Performance Mod                  
 echo %fob3%%fo0%                          made by ru-bem                          %blb%
 echo:
 echo:

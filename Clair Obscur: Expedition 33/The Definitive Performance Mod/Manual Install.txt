@@ -8,10 +8,6 @@
 ::--------------------------------------------------------------::
 ::                                                              ::
 ::                                                              ::
-::  ---   It's way easier to just use the automatic mode   ---  ::
-::  ---   But if you really don't want to use it do this   ---  ::
-::                                                              ::
-::                                                              ::
 ::  01 - Choose any preset and open it's folder.                ::
 ::       "2_Quality" for example.                               ::
 ::                                                              ::
@@ -45,6 +41,8 @@
 ::----- Visual FX:    High                                      ::
 ::----- Foliage:      High or Medium                            ::
 ::----- Shading:      High                                      ::
+::                                                              ::
+::      Decrease shadows, gi and Foliage for more performance   ::
 ::                                                              ::
 ::  08 - Have fun!                                              ::
 ::                                                              ::
