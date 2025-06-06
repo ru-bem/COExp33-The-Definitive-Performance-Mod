@@ -6,7 +6,7 @@ Up to 95% Boost on FPS! (Using the performance preset + optimized settings﻿)
 
 This mod is and will be free forever. If this made your game better and you'd like to say thanks, a donation helps a lot more than you can imagine!
 
-![](https://raw.githubusercontent.com/ru-bem/Game-mods/refs/heads/main/Nexus%20Mods/kofi.png) ![](https://raw.githubusercontent.com/ru-bem/Game-mods/refs/heads/main/Nexus%20Mods/livepix.png)
+![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png) ![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)
 
 ---
 
@@ -80,6 +80,6 @@ Tested on: **R5 3600 + RTX 2060 + 16gb RAM**
 
 Remember, this mod is and will be free forever. - Thank you for using it! -  Your feedback is appreciated!
 
-![](https://raw.githubusercontent.com/ru-bem/Game-mods/refs/heads/main/Nexus%20Mods/kofi.png) ![](https://raw.githubusercontent.com/ru-bem/Game-mods/refs/heads/main/Nexus%20Mods/livepix.png)
+![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png) ![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)
 
 Have fun!
