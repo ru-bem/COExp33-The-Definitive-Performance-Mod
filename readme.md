@@ -80,3 +80,8 @@ Remember, this mod is and will be free forever. - Thank you for using it! -  You
 ![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png) ![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)
 
 Have fun!
+
+---
+## ⏳ Future
+
+Expect the impossible. Even more performance with even better graphics. <br> 1.2.0 coming soon...
