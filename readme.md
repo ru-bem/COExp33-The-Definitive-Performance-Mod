@@ -3,7 +3,7 @@
 ---
 ##### ⬇️ Only download this mod from [Nexus Mods](https://www.nexusmods.com/clairobscurexpedition33/mods/308) or from [Github](https://github.com/ru-bem/COExp33-The-Definitive-Performance-Mod/releases/latest). Please report if you see this being distributed anywhere else. <br><br> Also remember: This mod is and will be free forever.<br> If this made your game better and you'd like to say thanks, a donation helps a lot more than you can imagine!
 
-![https://ko-fi.com/rubem](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png) ![https://livepix.gg/rubem](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)
+[![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png)](https://ko-fi.com/rubem) [![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)](https://livepix.gg/rubem)
 
 ---
 
@@ -77,7 +77,7 @@ Tested on: **R5 3600 + RTX 2060 + 16gb RAM**
 
 Remember, this mod is and will be free forever. - Thank you for using it! -  Your feedback is appreciated!
 
-![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png) ![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)
+[![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png)](https://ko-fi.com/rubem) [![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)](https://livepix.gg/rubem)
 
 Have fun!
 
