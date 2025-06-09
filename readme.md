@@ -1,5 +1,5 @@
 # COExp33 - The Definitive Performance Mod
-##### Up to 95% Boost on FPS! (Using the performance preset + optimized settings﻿)
+##### Up to 110% Boost on FPS! (Using the performance preset + optimized settings﻿)
 ---
 ##### ⬇️ Only download this mod from [Nexus Mods](https://www.nexusmods.com/clairobscurexpedition33/mods/308) or from [Github](https://github.com/ru-bem/COExp33-The-Definitive-Performance-Mod/releases/latest). Please report if you see this being distributed anywhere else. <br><br> Also remember: This mod is and will be free forever.<br> If this made your game better and you'd like to say thanks, a donation helps a lot more than you can imagine!
 
@@ -21,11 +21,12 @@ This mod was made by testing hundreds of UE5 console variables one by one. Only 
 Each preset gives you different boosts depending of what you want. 
 **REMEMBER TO USE THE OPTIMIZED SETTINGS**
 
-- **Lossless: +45%** - Total focus on visuals. The closest possible to the vanilla graphics.
-- **Quality: +60%** - Keeps the high quality making some small trades for performance
-- **Performance: +95%** - Extract the most performance possible without breaking the visuals.
-- **Potato: +175%** - For Low End PCs, total focus on performance. Ugly but not broken.
-- **Monstrosity: +225%** - Hell. Broken visuals and unplayable devilishness. This is the lightest this game can ever be. Shouldn't be used at all.
+- **Lossless: +55%** - The closest possible to the vanilla graphics. You don't lose anything, this is basically free performance.
+- **Quality: +75%** - Keeps the high quality by making only small changes on visuals for performance.
+- **Balanced: 92%%** - Use this if you need more performance but still don't want to trade a lot of visuals for it.
+- **Performance: 110%** - Disables lumen and tweaks various visual aspects for a huge performance increase. Don't break anything.
+- **Potato: +201%** - For low end PCs. Total focus on performance. It's ugly but it's kinda playable (I guess...).
+- **Monstrosity: +259%** - Hell. Broken visuals and unplayable devilishness. This costs your soul so it shouldn't be used at all.
 
 📷 *Check mod images for comparison*
 
@@ -37,7 +38,7 @@ There are two methods to install the mod. I recommend you to use the automatic m
 
 ### **Automatic mode:**
 
-1. Run the "Automatic Install" file inside the mod folder (after extracting it).
+1. Run the "Auto Install" file inside the mod folder (after extracting it).
 2. Type the number correponding to the preset you want to install, press [Enter] and have fun!
 
 It's a fully commented batch script, so you can open it in a text editor and see exactly what each line of code does. You can also check the whole code here on github﻿.
@@ -45,12 +46,12 @@ It's a fully commented batch script, so you can open it in a text editor and see
 ### Manual mode:
 
 1. Choose any preset and open it's folder. "2_Quality" for example.
-2. Copy the file inside this preset folder (Engine.ini).
+2. Copy all the files inside this preset folder.
 3. Click on the Windows Explorer's address bar and type: %LocalAppData%\Sandfall\Saved\Config
 4. Look for one of these two folders: "Windows" or "WinGDK" and open it.
-5. Now paste the "Engine.ini" you copied here.
-6. You now should have 2 files inside this folder: Engine.ini and GameUserSettings.ini
-7. Run the game, go to Graphics options and use the optimized settings and have fun!
+5. Now paste the files you copied here.
+6. You now should have 3 files inside this folder: Engine.ini, Scalability.ini and GameUserSettings.ini
+7. Run the game, go to Graphics options, use the optimized settings and have fun!
 
 ---
 
