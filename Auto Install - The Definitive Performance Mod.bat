@@ -1,9 +1,10 @@
 ::::
 ::
-:: This little program has been written in a very simple and easy-to-read way so most people can understand exactly what the program will do.
-:: Have fun!
+:: This little program is written in a very simple and easy to read way so that most people can understand exactly what each line does. Have fun!
 ::
-:: Made with love by ru-bem
+:: This was made by me, ru-bem. Please make sure you have downloaded this from Nexus Mods or Github.
+:: https://www.nexusmods.com/clairobscurexpedition33/mods/308
+:: https://github.com/ru-bem/COExp33-The-Definitive-Performance-Mod
 ::
 ::::
 
@@ -11,7 +12,7 @@
 :: This lines tells the cmd to show you only the necessary, sets the mod version, window size, page code and the title.
 @echo off
 setlocal EnableDelayedExpansion
-set modver=v1.1.0
+set modver=v1.2.0
 mode con:cols=66 lines=33
 chcp 65001 >nul
 title COExp 33: The Definitive Performance Mod - %modver%
@@ -37,6 +38,15 @@ set fo5=[38;2;255;249;242m
 ::
 
 
+:: Folder names to make it easy when some update is needed.
+set lossless=1_Lossless
+set quality=2_Quality
+set balanced=3_Balanced
+set performance=4_Performance
+set potato=5_Potato
+set monstrosity=6_Monstrosity
+
+
 :: Shows a loading message on screen. You'll only see this if you use a very, very, very slow pc.
 echo: & echo ::: COExp33 - The Definitive Performance Mod :::
 echo: & echo     Loading...
@@ -56,13 +66,17 @@ if not defined cfglocal goto notinstalled
 ::
 
 
+:: Default messages
+set errormessage=Something went wrong. Try installing it manually.
+
 :: Check if the user have extracted all the files.
 set extracted=yes
-if not exist "%~dp01_Lossless"    (set extracted=no)
-if not exist "%~dp02_Quality"     (set extracted=no)
-if not exist "%~dp03_Performance" (set extracted=no)
-if not exist "%~dp04_Potato"      (set extracted=no)
-if not exist "%~dp05_Monstrosity" (set extracted=no)
+if not exist "%~dp0%lossless%"    (set extracted=no)
+if not exist "%~dp0%quality%"     (set extracted=no)
+if not exist "%~dp0%balanced%"     (set extracted=no)
+if not exist "%~dp0%performance%" (set extracted=no)
+if not exist "%~dp0%potato%"      (set extracted=no)
+if not exist "%~dp0%monstrosity%" (set extracted=no)
 if %extracted%==no (goto notextracted) else (goto menu)
 ::
 
@@ -108,12 +122,13 @@ call :header
 echo     %fo1%Type a number and press %fw%[ENTER]
 echo:
 echo:
-echo     %fo1%[1]%fw% Default%fo0%::::: %fo1%Vanilla Engine.ini settings  -%fw%   0%% Boost
-echo     %fo1%[2]%fw% Lossless%fo0%:::: %fo1%Almost identical to Vanilla  -%fw%  45%% Boost
-echo     %fo1%[3]%fw% Quality%fo0%::::: %fo1%Pretty good visual quality   -%fw%  60%% Boost
-echo     %fo1%[4]%fw% Performance%fo0%: %fo1%Trade visual for performance -%fw%  95%% Boost
-echo     %fo1%[5]%fw% Potato%fo0%:::::: %fo1%For low end PCs              -%fw% 175%% Boost
-echo     %fo1%[6]%fw% Monstrosity%fo0%: %fo1%For real, just don't do this -%fw% 225%% Boost
+echo     %fo1%[0]%fw% Default%fo0%::::: %fo1%Vanilla Engine.ini settings  -%fw%   0%% Boost
+echo     %fo1%[1]%fw% Lossless%fo0%:::: %fo1%Almost identical to Vanilla  -%fw%  55%% Boost
+echo     %fo1%[2]%fw% Quality%fo0%::::: %fo1%Pretty good visual quality   -%fw%  75%% Boost
+echo     %fo1%[3]%fw% Balanced%fo0%:::: %fo1%Balanced quality and Perf    -%fw%  92%% Boost
+echo     %fo1%[4]%fw% Performance%fo0%: %fo1%Trade visual for performance -%fw% 110%% Boost
+echo     %fo1%[5]%fw% Potato%fo0%:::::: %fo1%For low end PCs              -%fw% 201%% Boost
+echo     %fo1%[6]%fw% Monstrosity%fo0%: %fo1%For real, just don't do this -%fw% 259%% Boost
 echo:
 echo:
 echo     %fo1%[7] IMPORTANT: USE THIS OPTIMIZED IN-GAME SETTINGS
@@ -130,9 +145,9 @@ set /p choice=%blf%----%fo1%[
 
 
 :: Choice 1 will just delete any Engine.ini present on default Exp 33 config location.
-if %choice%==1 (
+if %choice%==0 (
 	if exist "%cfglocal%\Engine.ini" (
-		del /s /f /q "%cfglocal%\Engine.ini"
+		for %%G in (Engine.ini Scalability.ini) do (del /s /f /q "%cfglocal%\%%G")
 		msg * "Default preset applied^!"
 		goto menu
 	) else (
@@ -140,33 +155,39 @@ if %choice%==1 (
 ::
 
 
-:: Choice 2-5 line by line:
+:: Choices 2-6 line by line:
 :: robocopy will, you know, copy Engine.ini from the selected preset folder to the default Exp33 config location.
 :: If everything works it will show you a message, if not, it will show you another message.
 :: After that ATTRIB will set the file to read-only.
 :: Return to menu.
+if %choice%==1 (
+	robocopy "%~dp0%lossless%\\" "%cfglocal%\\" *.* >nul 2>&1
+	if %errorlevel%==0 (msg * "Lossless preset was installed^!" ) else (msg * "%errormessage%")
+	call :SetReadOnly
+	goto menu)
+
 if %choice%==2 (
-	robocopy "%~dp01_Lossless\\" "%cfglocal%\\" Engine.ini >nul 2>&1
-	if %errorlevel%==0 (msg * "Lossless preset was installed^!" ) else (msg * "Something went wrong. Try installing it manually.")
-	ATTRIB +R "%cfglocal%\Engine.ini"
+	robocopy "%~dp0%quality%\\" "%cfglocal%\\" *.* >nul 2>&1
+	if %errorlevel%==0 (msg * "Quality preset was installed^!" ) else (msg * "%errormessage%")
+	call :SetReadOnly
 	goto menu)
 
 if %choice%==3 (
-	robocopy "%~dp02_Quality\\" "%cfglocal%\\" Engine.ini >nul 2>&1
-	if %errorlevel%==0 (msg * "Quality preset was installed^!" ) else (msg * "Something went wrong. Try installing it manually.")
-	ATTRIB +R "%cfglocal%\Engine.ini"
+	robocopy "%~dp0%balanced%\\" "%cfglocal%\\" *.* >nul 2>&1
+	if %errorlevel%==0 (msg * "Balanced preset was installed^!" ) else (msg * "%errormessage%")
+	call :SetReadOnly
 	goto menu)
 
 if %choice%==4 (
-	robocopy "%~dp03_Performance\\" "%cfglocal%\\" Engine.ini >nul 2>&1
-	if %errorlevel%==0 (msg * "Performance preset was installed^!" ) else (msg * "Something went wrong. Try installing it manually.")
-	ATTRIB +R "%cfglocal%\Engine.ini"
+	robocopy "%~dp0%performance%\\" "%cfglocal%\\" *.* >nul 2>&1
+	if %errorlevel%==0 (msg * "Performance preset was installed^!" ) else (msg * "%errormessage%")
+	call :SetReadOnly
 	goto menu)
 
 if %choice%==5 (
-	robocopy "%~dp04_Potato\\" "%cfglocal%\\" Engine.ini >nul 2>&1
-	if %errorlevel%==0 (msg * "Potato preset was installed^!" ) else (msg * "Something went wrong. Try installing it manually.")
-	ATTRIB +R "%cfglocal%\Engine.ini"
+	robocopy "%~dp0%potato%\\" "%cfglocal%\\" *.* >nul 2>&1
+	if %errorlevel%==0 (msg * "Potato preset was installed^!" ) else (msg * "%errormessage%")
+	call :SetReadOnly
 	goto menu)
 	
 
@@ -181,7 +202,13 @@ if %choice%==9 (exit)
 msg * "This isn't a valid choice." & goto menu
 
 
-:: This is the mostrosity preset section 💀.
+:: The function that sets the files to read-only - It's used at the end of each choice block.
+:SetReadOnly
+for %%G in (Engine.ini Scalability.ini) do (ATTRIB +R "%cfglocal%\%%G")
+goto menu
+
+
+:: This is the mostrosity preset section 💀. Will do the same as choices 2-6
 :monstrosity
 cls
 call :header
@@ -192,14 +219,14 @@ echo    [1] - Yes    ^|    [2] - No
 echo:
 set /p choicem=%blf%---%fo1%[
 if %choicem%==1 (
-	robocopy "%~dp05_Monstrosity\\" "%cfglocal%\\" Engine.ini >nul 2>&1
-	if %errorlevel%==0 (msg * "May God have mercy upon your soul.") else (msg * "Something went wrong. Try installing it manually.")
-	ATTRIB +R "%cfglocal%\Engine.ini"
+	robocopy "%~dp0%monstrosity%\\" "%cfglocal%\\" *.* >nul 2>&1
+	if %errorlevel%==0 (msg * "May God have mercy upon your soul.") else (msg * "%errormessage%")
+	call :SetReadOnly
 	goto menu
 ) else (msg * "Thank you for not doing that :D" & goto menu)
 
 
-:: This will show you the In-Game Settings that you need to change
+:: This will load the txt file with the needed In-Game Settings inside the program so you can see what you need to change.
 :settings
 echo %fob2%
 cls

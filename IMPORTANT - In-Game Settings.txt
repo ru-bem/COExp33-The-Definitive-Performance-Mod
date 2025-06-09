@@ -8,26 +8,37 @@
 ::--------------------------------------------------------------::
 ::                                                              ::
 ::                                                              ::
-::      Run the game, go to Graphics options and do this:       ::
+::     Run the game, go to Graphics options and do this:        ::
 ::                                                              ::
-::----- Preset:       High (Yes, trust me.)                     ::
-::----- Scaling Type: DLSS or XESS or TSR, in this order.       ::
-::----- Scaling Mode: Quality                                   ::
-::-----                                                         ::
-::----- AAliasing:    Epic                                      ::
-::----- Shadows:      High                                      ::
-::----- GI:           High                                      ::
-::----- Reflection:   Epic                                      ::
-::----- Post Process: Low                                       ::
-::----- Texture:      Epic                                      ::
-::----- Visual FX:    High                                      ::
-::----- Foliage:      High or Medium                            ::
-::----- Shading:      High                                      ::
+::---- Preset:       High (Affects a lot of other variables)    ::
+::---- Scaling Type: DLSS or XESS or TSR, in this order.        ::
+::---- Scaling Mode: Quality                                    ::
+::----                                                          ::
+::---- Shadows:      High - Decrease for more performance       ::
+::---- GI:           High - Decrease for more performance       ::
+::---- Post Process: Low                                        ::
+::---- Foliage:      Medium                                     ::
+::                                                              ::
+::---- Shading now controls View Distance Scale, so this        ::
+::     setting have a huge performance hit when using this mod. ::
+::                                                              ::
+::     Epic: r.ViewDistanceScale=2                              ::
+::     High: r.ViewDistanceScale=1                              ::
+::     Med:  r.ViewDistanceScale=0.7                            ::
+::     Low:  r.ViewDistanceScale=0.5                            ::
+::                                                              ::
+::     Set it to High. Lower if you need more performance.      ::
+::     YOU NEED TO RELOAD YOUR SAVE OR ENTER ANY PORTAL/DOOR    ::
+::     FOR THE SHADING CHANGES TO APPLY.                        ::
 ::                                                              ::
 ::                                                              ::
-::      Decrease shadows, gi and Foliage for more performance   ::
-::                                                              ::
-::                                                              ::
-::      Have fun!                                               ::
+::     Have fun!                                                ::
 ::                                                              ::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+  This mod is open source! You can check everything
+  including the source code for the Auto Install on github:
+  https://github.com/ru-bem/COExp33-The-Definitive-Performance-Mod
+  
+  This mod is ONLY available on Nexus Mods and Github.
