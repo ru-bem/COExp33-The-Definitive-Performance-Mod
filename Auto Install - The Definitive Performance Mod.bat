@@ -12,7 +12,7 @@
 :: This lines tells the cmd to show you only the necessary, sets the mod version, window size, page code and the title.
 @echo off
 setlocal EnableDelayedExpansion
-set modver=v1.2.0
+set modver=v1.2.1
 mode con:cols=66 lines=33
 chcp 65001 >nul
 title COExp 33: The Definitive Performance Mod - %modver%
@@ -122,12 +122,12 @@ call :header
 echo     %fo1%Type a number and press %fw%[ENTER]
 echo:
 echo:
-echo     %fo1%[0]%fw% Default%fo0%::::: %fo1%Vanilla Engine.ini settings  -%fw%   0%% Boost
+echo     %fo1%[0]%fw% Default%fo0%::::: %fo1%Use the vanilla graphics     -%fw%   0%% Boost
 echo     %fo1%[1]%fw% Lossless%fo0%:::: %fo1%Almost identical to Vanilla  -%fw%  55%% Boost
-echo     %fo1%[2]%fw% Quality%fo0%::::: %fo1%Pretty good visual quality   -%fw%  75%% Boost
-echo     %fo1%[3]%fw% Balanced%fo0%:::: %fo1%Balanced quality and Perf    -%fw%  92%% Boost
+echo     %fo1%[2]%fw% Quality%fo0%::::: %fo1%High quality. (Recommended)  -%fw%  75%% Boost
+echo     %fo1%[3]%fw% Balanced%fo0%:::: %fo1%If you need even more FPS    -%fw%  92%% Boost
 echo     %fo1%[4]%fw% Performance%fo0%: %fo1%Trade visual for performance -%fw% 110%% Boost
-echo     %fo1%[5]%fw% Potato%fo0%:::::: %fo1%For low end PCs              -%fw% 201%% Boost
+echo     %fo1%[5]%fw% Potato%fo0%:::::: %fo1%For low end PCs. (playable^?) -%fw% 201%% Boost
 echo     %fo1%[6]%fw% Monstrosity%fo0%: %fo1%For real, just don't do this -%fw% 259%% Boost
 echo:
 echo:
