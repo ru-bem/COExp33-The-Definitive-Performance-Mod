@@ -7,7 +7,6 @@
 ::                                                              ::
 ::--------------------------------------------------------------::
 ::                                                              ::
-::                                                              ::
 ::     Run the game, go to Graphics options and do this:        ::
 ::                                                              ::
 ::---- Preset:       High (Affects a lot of other variables)    ::
@@ -24,14 +23,15 @@
 ::---- Foliage:      High or Medium                             ::
 ::---- Shading:      High                                       ::
 ::                                                              ::
-::                                                              ::
 ::     Have fun!                                                ::
 ::                                                              ::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-  This mod is open source! You can check everything
-  including the source code for the Auto Install on github:
-  https://github.com/ru-bem/COExp33-The-Definitive-Performance-Mod
-  
-  This mod is ONLY available on Nexus Mods and Github.
+::                                                              ::
+::  This mod is open source! You can check everything           ::
+::  including the source code for the Auto Install on github:   ::
+::                                                              ::
+ https://github.com/ru-bem/COExp33-The-Definitive-Performance-Mod 
+::                                                              ::
+::  This mod is ONLY available on Nexus Mods and Github.        ::
+::                                                              ::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
