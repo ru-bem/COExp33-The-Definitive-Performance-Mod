@@ -15,8 +15,9 @@ setlocal EnableDelayedExpansion
 set modver=v1.3.0
 mode con:cols=66 lines=33
 chcp 65001 >nul
-title The Definitive Performance Mod - %modver% - ru-bem
+title The Definitive Performance Mod - %modver% -- github.com/ru-bem
 ::
+
 
 :: These lines below sets the colors used for the interface.
 set blf=[30m
@@ -37,7 +38,7 @@ set fo5=[38;2;255;249;242m
 ::
 
 
-:: Folder names to make it easy when some update is needed.
+:: These are the folder names. They are set here to make future updates easier.
 set    lossless=1_Lossless
 set     quality=2_Quality
 set    balanced=3_Balanced
@@ -56,9 +57,7 @@ echo: & echo     Loading...
 set "e33win=%Localappdata%\Sandfall\Saved\Config\Windows"
 set "e33xbox=%Localappdata%\Sandfall\Saved\Config\WinGDK"
 ::
-
-
-:: Check if the game and it's version is installed and the version.
+:: Check if the game is installed and it's version.
 if exist %e33win% set cfglocal=!e33win!
 if exist %e33xbox% set cfglocal=!e33xbox!
 if not defined cfglocal goto notinstalled
@@ -69,7 +68,7 @@ if not defined cfglocal goto notinstalled
 set extracted=yes
 if not exist "%~dp0%lossless%"    (set extracted=no)
 if not exist "%~dp0%quality%"     (set extracted=no)
-if not exist "%~dp0%balanced%"     (set extracted=no)
+if not exist "%~dp0%balanced%"    (set extracted=no)
 if not exist "%~dp0%performance%" (set extracted=no)
 if not exist "%~dp0%potato%"      (set extracted=no)
 if not exist "%~dp0%monstrosity%" (set extracted=no)
@@ -95,7 +94,7 @@ exit
 ::
 
 
-:: This will open if the game is not installed.
+:: If the game isn't installed then goto here.
 :notinstalled
 cls
 call :header
@@ -110,14 +109,16 @@ echo   Press any key to close the mod menu...
 pause >nul & exit
 
 
-:: Sets an empty line below the header. Just visual.
-set "msg=%fob3%                                                                  "
-
-
 :: Here's the fancy menu with colors and everything.
 :menu
 cls
+
+
+:: This places the header on top of the menu. You can find this header below on the code.
 call :header
+
+
+:: Those %% below are for applying the colors.
 echo     %fo1%Type a number and press %fw%[ENTER]
 echo:
 echo:
@@ -138,12 +139,13 @@ echo     %fo1%[9]%fw% Exit
 echo:
 ::
 
-:: This allows you to make a choice.
+
+:: This allows you to make a choice by pressing a key then pressing enter.
 set /p choice=%blf%----%fo1%[
 ::
 
 
-:: Choice 1 will just delete any Engine.ini present on default Exp 33 config location.
+:: Choice 1 will just delete any Engine.ini and Scalability.ini present on default Exp 33 config location.
 if %choice%==0 (
 	if exist "%cfglocal%\Engine.ini" (
 		for %%G in (Engine.ini Scalability.ini) do (del /s /f /q "%cfglocal%\%%G")
@@ -155,10 +157,10 @@ if %choice%==0 (
 
 
 :: Choices 2-6 line by line:
-:: robocopy will, you know, copy Engine.ini from the selected preset folder to the default Exp33 config location.
+:: robocopy will copy all the files inside the selected preset folder to the default Exp33 config location.
 :: If everything works it will show you a message, if not, it will show you another message.
-:: After that ATTRIB will set the file to read-only.
-:: Return to menu.
+:: After that it will call an function to set the files to read-only.
+:: Then it'll return to menu.
 if %choice%==1 (
 	robocopy "%~dp0%lossless%\\" "%cfglocal%\\" *.* >nul 2>&1
 	if %errorlevel%==0 (call :1installed) else (call :2msg)
@@ -201,22 +203,14 @@ if %choice%==8 (start https://www.nexusmods.com/clairobscurexpedition33/mods/308
 if %choice%==9 (exit)
 
 
-:: In case the user try to make a unavailable choice.
+:: If the user make unavailable choice this message will be shown.
 set "msg=%fr%                    This isn't a valid choice.                    " & goto menu
 
 
-:: The function that sets the files to read-only - It's used at the end of each choice block.
+:: The function that sets the files to read-only.
 :SetReadOnly
 for %%G in (Engine.ini Scalability.ini) do (ATTRIB +R "%cfglocal%\%%G")
 goto menu
-
-
-if %choice%==6 (
-	robocopy "%~dp0%monstrosity%\\" "%cfglocal%\\" *.* >nul 2>&1
-	if %errorlevel%==0 (set "msg=%fg%May God have mercy upon your soul.") else (call :2msg)
-	call :SetReadOnly
-	goto menu
-) else (set "msg=%fg%Thank you for not doing that :D" & goto menu)
 
 
 :: This will load the txt file with the needed In-Game Settings inside the program so you can see what you need to change.
@@ -242,7 +236,8 @@ echo         █▀▀ ▀▄▀ %fo2%█▀█ %fo3%█▀▀ %fo4%█▀▄ %f
 echo         ██▄ █ █ %fo2%█▀▀ %fo3%██▄ %fo4%█▄▀ %fo5%▄█▄ %fo4% █  %fo3%▄█▄ %fo2%█▄▀ %fo1%█ ▀█   %fo5%▄▄█ %fo5%▄▄█        %fw%
 echo %fob1%%fo1%                                                                  
 echo %fob2%                  %fo3%The Definitive Performance Mod                  
-echo %fob3%%msg%%blb%
+echo %fob3%                                                                  
+echo [1A%fob3%%msg%%blb%
 echo:
 echo:
 goto:eof
