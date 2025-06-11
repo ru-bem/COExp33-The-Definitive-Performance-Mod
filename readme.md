@@ -81,3 +81,7 @@ Remember, this mod is and will be free forever. - Thank you for using it! -  You
 [![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png)](https://ko-fi.com/rubem) [![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)](https://livepix.gg/rubem)
 
 Have fun!
+
+---
+##### Helpers:
+###### Yuhgmapacho, Gadren, anothernexusmods, jebzc01, type7transporter
