@@ -83,5 +83,9 @@ Remember, this mod is and will be free forever. - Thank you for using it! -  You
 Have fun!
 
 ---
+Comming next:
+- Less pop-in on lower presets with no performance impact
+- Fix fox white screen bug for some people when using performance ini
+---
 ##### Helpers:
 ###### Yuhgmapacho, Gadren, anothernexusmods, jebzc01, type7transporter
