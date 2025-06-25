@@ -122,18 +122,18 @@ call :header
 echo:
 echo     %fob1%%fo1%    PRESETS    %blb%%fw%
 echo     %fo1%[0]%fw% Default%fo0%::::: %fo1%Vanilla graphics.            -%fw%   0%% Boost
-echo     %fo1%[1]%fw% Lossless%fo0%:::: %fo1%Almost identical to Vanilla  -%fw%  55%% Boost
-echo     %fo1%[2]%fw% Quality%fo0%::::: %fo1%High quality. (Recommended)  -%fw%  75%% Boost
-echo     %fo1%[3]%fw% Balanced%fo0%:::: %fo1%If you need even more FPS    -%fw%  92%% Boost
-echo     %fo1%[4]%fw% Performance%fo0%: %fo1%Trade visual for performance -%fw% 110%% Boost
-echo     %fo1%[5]%fw% Potato%fo0%:::::: %fo1%For low end PCs. (playable^?) -%fw% 201%% Boost
-echo     %fo1%[6]%fw% Monstrosity%fo0%: %fo1%For real, just don't do this -%fw% 259%% Boost
+echo     %fo1%[1]%fw% Lossless%fo0%:::: %fo1%Almost identical to Vanilla  -%fw%  70%% Boost
+echo     %fo1%[2]%fw% Quality%fo0%::::: %fo1%High quality. (Recommended)  -%fw%  80%% Boost
+echo     %fo1%[3]%fw% Balanced%fo0%:::: %fo1%If you need even more FPS    -%fw% 105%% Boost
+echo     %fo1%[4]%fw% Performance%fo0%: %fo1%Trade visual for performance -%fw% 127%% Boost
+echo     %fo1%[5]%fw% Potato%fo0%:::::: %fo1%For very low end PCs         -%fw% 201%% Boost
+echo     %fo1%[6]%fw% Monstrosity%fo0%: %fo1%Don't do this...             -%fw% 261%% Boost
 echo     %fo1%[7]%fw% Steam Deck%fo0%:: %fo1%B E T A - Waiting for feedbacks...%fw%
 echo:
 echo     %fob1%%fo1%    Info + Extras    %blb%%fw%
 echo     %fo1%[A]%fw% IMPORTANT: USE THIS OPTIMIZED IN-GAME SETTINGS
 echo     %fo1%[B]%fw% Clear + lock Exp33 cache file.
-echo     %fo1%[C]%fw% Unlock cache file again.
+echo     %fo1%[C]%fw% Restore cache file to default.
 echo     %fo1%[D]%fw% More details
 echo:
 echo     %fo1%[X]%fw% Exit
