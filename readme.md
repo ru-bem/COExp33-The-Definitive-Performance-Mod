@@ -1,5 +1,5 @@
 # COExp33 - The Definitive Performance Mod
-##### Up to 110% Boost on FPS! (Using the performance preset + optimized settings﻿)
+##### Up to 127% Boost on FPS! (Using the performance preset + optimized settings﻿)
 ---
 ##### ⬇️ Only download this mod from [Nexus Mods](https://www.nexusmods.com/clairobscurexpedition33/mods/308) or from [Github](https://github.com/ru-bem/COExp33-The-Definitive-Performance-Mod/releases/latest). Please report if you see this being distributed anywhere else. <br><br> Also remember: This mod is and will be free forever.<br> If this made your game better and you'd like to say thanks, a donation helps a lot more than you can imagine!
 
