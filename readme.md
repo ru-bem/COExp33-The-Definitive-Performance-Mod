@@ -21,12 +21,12 @@ This mod was made by testing hundreds of UE5 console variables one by one. Only 
 Each preset gives you different boosts depending of what you want. 
 **REMEMBER TO USE THE OPTIMIZED SETTINGS**
 
-- **Lossless: +55%** - The closest possible to the vanilla graphics. You don't lose anything, this is basically free performance.
-- **Quality: +75%** - Keeps the high quality by making only small changes on visuals for performance.
-- **Balanced: 92%%** - Use this if you need more performance but still don't want to trade a lot of visuals for it.
-- **Performance: 110%** - Disables lumen and tweaks various visual aspects for a huge performance increase. Don't break anything.
+- **Lossless: +70%** - The closest possible to the vanilla graphics. You don't lose anything, this is basically free performance.
+- **Quality: +80%** - Keeps the high quality by making only small changes on visuals for performance.
+- **Balanced: 105%%** - Use this if you need more performance but still don't want to trade a lot of visuals for it.
+- **Performance: 127%** - Disables lumen and tweaks various visual aspects for a huge performance increase. Don't break anything.
 - **Potato: +201%** - For low end PCs. Total focus on performance. It's ugly but it's kinda playable (I guess...).
-- **Monstrosity: +259%** - Hell. Broken visuals and unplayable devilishness. This costs your soul so it shouldn't be used at all.
+- **Monstrosity: +261%** - Hell. Broken visuals and unplayable devilishness. This costs your soul so it shouldn't be used at all.
 
 📷 *Check mod images for comparison*
 
