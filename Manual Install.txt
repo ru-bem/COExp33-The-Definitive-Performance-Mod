@@ -47,9 +47,5 @@
 ::                                                              ::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-  This mod is open source! You can check everything
-  including the source code for the Auto Install on github:
-  https://github.com/ru-bem/COExp33-The-Definitive-Performance-Mod
-  
-  This mod is ONLY available on Nexus Mods and Github.
+This mod is open source and ONLY available on Nexus Mods and Github
+https://github.com/ru-bem/COExp33-The-Definitive-Performance-Mod

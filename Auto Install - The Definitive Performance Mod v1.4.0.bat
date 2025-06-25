@@ -80,6 +80,7 @@ if %extracted%==no (goto notextracted) else (goto menu)
 :notextracted
 cls
 call :header
+echo:
 echo %fo1%   Hey, you're almost there but %fr%some files are missing.%fo1%
 echo    All the mod files should exist inside the same folder.
 echo:
@@ -98,6 +99,7 @@ exit
 :notinstalled
 cls
 call :header
+echo:
 echo   %fr%The game is not installed.%fw%
 echo   If it's installed, run the game once and try again.
 echo:
@@ -118,7 +120,6 @@ cls
 call :header
 
 :: Those %% below are for applying the colors.
-:: echo     %fo1%     How to use: Type a number/letter and press ENTER
 echo:
 echo     %fob1%%fo1%    PRESETS    %blb%%fw%
 echo     %fo1%[0]%fw% Default%fo0%::::: %fo1%Vanilla graphics.            -%fw%   0%% Boost
