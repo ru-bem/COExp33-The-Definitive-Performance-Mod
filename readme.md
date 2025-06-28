@@ -21,12 +21,13 @@ This mod was made by testing hundreds of UE5 console variables one by one. Only 
 Each preset gives you different boosts depending of what you want. 
 **REMEMBER TO USE THE OPTIMIZED SETTINGS**
 
-- **Lossless: +70%** - The closest possible to the vanilla graphics. You don't lose anything, this is basically free performance.
-- **Quality: +80%** - Keeps the high quality by making only small changes on visuals for performance.
-- **Balanced: 105%%** - Use this if you need more performance but still don't want to trade a lot of visuals for it.
-- **Performance: 127%** - Disables lumen and tweaks various visual aspects for a huge performance increase. Don't break anything.
-- **Potato: +201%** - For low end PCs. Total focus on performance. It's ugly but it's kinda playable (I guess...).
-- **Monstrosity: +261%** - Hell. Broken visuals and unplayable devilishness. This costs your soul so it shouldn't be used at all.
+- **🟰 Lossless: +70%** - The closest possible to the original. This is basically free performance and better graphics.
+- **⚪ Quality: +80%** - Very high quality. Only small visual changes were made for performance.
+- **⚖️ Balanced: 105%%** - Same as quality but with little less quality lumen and shadows (basically).
+- **⏩ Performance: 127%** - A miracle. No lumen but you won't even notice. Huge performance increase.
+- **🥔 Potato: +201%** - For low end PCs. Total focus on performance. Ugly but playable.
+- **💀 Monstrosity: +261%** - Hell. Broken visuals and unplayable devilishness. This costs your soul and shouldn't be used at all.
+- [NEW!] Steam Deck - Optimized for Steam Deck. [BETA]
 
 📷 *Check mod images for comparison*
 
