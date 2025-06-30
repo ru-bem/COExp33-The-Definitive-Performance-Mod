@@ -58,9 +58,9 @@ It's a fully commented batch script, so you can open it in a text editor and see
 
 ## 🖥️ Optimized Settings
 
-🟡 This mod scales well with in-game presets (Low, Medium, High and Epic).
-Feel free to try other combinations if you have a faster or slower setup.
-You can lower Shadows, Gi and Folliage for even better performance.
+🟡 This mod scales well with in-game presets (Low, Medium, High and Epic).<br>
+Feel free to try other combinations if you have a faster or slower setup.<br>
+You can lower Shadows, Gi and Folliage for even better performance.<br>
 
 🤩 High end GPUs (RTX 4070+): **High preset + Lossless ini**<br>
 😎 Mid end GPUs (RTX 3060~): **High preset + Quality ini**<br>
