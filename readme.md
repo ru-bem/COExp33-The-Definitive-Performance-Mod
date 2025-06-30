@@ -58,24 +58,18 @@ It's a fully commented batch script, so you can open it in a text editor and see
 
 ## 🖥️ Optimized Settings
 
-```markdown
-Preset:       High (Affects r.ViewDistanceScale and other variables)
-Scaling Type: DLSS or XESS or TSR, in this order.
-Scaling Mode: Quality
-AA:           Epic (only relevant for TSR)
-Shadows:      High
-GI:           High
-Reflection:   Epic
-Post Process: Low
-Texture:      Epic
-Visual FX:    High
-Foliage:      High or Medium
-Shading:      High
+🟡 This mod scales well with in-game presets (Low, Medium, High and Epic).
+Feel free to try other combinations if you have a faster or slower setup.
+You can lower Shadows, Gi and Folliage for even better performance.
 
-You can lower Shadows, GI and Folliage for even better performance.
-```
+🤩 High end GPUs (RTX 4070+): **High preset + Lossless ini**<br>
+😎 Mid end GPUs (RTX 3060~): **High preset + Quality ini**<br>
+😄 Mid-low end GPUs (RTX 2060~): **High preset + Quality ini**<br>
+😊 Low end GPUs (RTX 3050~): **Medium preset + Balanced ini**<br>
+😐 Very old GPUs (GTX 1050~): **Medium preset + Performance ini**<br>
+💀 (GT 1030~): **Low preset + Potato ini**<br>
 
-Tested on: **R5 3600 + RTX 2060 + 16gb RAM**
+Scaling Type priority order: DLSS > XESS > TSR
 
 Remember, this mod is and will be free forever. - Thank you for using it! -  Your feedback is appreciated!
 
