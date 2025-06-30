@@ -7,19 +7,20 @@
 
 ---
 
-This mod was made by testing hundreds of UE5 console variables one by one. Only a few of them are really relevant. Each line inside any Engine.ini gives you at least one of these benefits:
+ℹ️ This mod was made by testing hundreds of UE5 console variables, one by one.
 
-- +1 FPS
-- Lower GPU usage
-- Lower CPU usage
-- Lower VRAM usage
+AMD GPU owners:
+This mod will fix most of the visual issues but may not provide a huge performance boost for you. It's not my fault.
+UE5.4 variables don't seem to scale well on some of your GPUs. But try it out!
+
+NVIDIA and INTEL GPU owners:
+Have fun!
 
 ---
 
 ## 📈 PRESETS
 
-Each preset gives you different boosts depending of what you want. 
-**REMEMBER TO USE THE OPTIMIZED SETTINGS**
+Each preset gives you different boosts depending of what you want.
 
 - **🟰 Lossless: +70%** - The closest possible to the original. This is basically free performance and better graphics.
 - **⚪ Quality: +80%** - Very high quality. Only small visual changes were made for performance.
@@ -29,7 +30,7 @@ Each preset gives you different boosts depending of what you want.
 - **💀 Monstrosity: +261%** - Hell. Broken visuals and unplayable devilishness. This costs your soul and shouldn't be used at all.
 - [NEW!] Steam Deck - Optimized for Steam Deck. [BETA]
 
-📷 *Check mod images for comparison*
+**Remember to use them with the optimized settings**
 
 ---
 
@@ -71,16 +72,14 @@ You can lower Shadows, Gi and Folliage for even better performance.<br>
 
 Scaling Type priority order: DLSS > XESS > TSR
 
-Remember, this mod is and will be free forever. - Thank you for using it! -  Your feedback is appreciated!
+---
 
-[![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png)](https://ko-fi.com/rubem) [![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)](https://livepix.gg/rubem)
+Thank you for being awesome!<br>
+Your feedback is appreciated!
 
+[![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png)](https://ko-fi.com/rubem) [![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)](https://livepix.gg/rubem) <br>
 Have fun!
 
----
-Comming next:
-- Less pop-in on lower presets with no performance impact
-- Fix fox white screen bug for some people when using performance ini
 ---
 ##### Helpers:
 ###### Yuhgmapacho, Gadren, anothernexusmods, jebzc01, type7transporter
