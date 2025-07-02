@@ -51,7 +51,8 @@ set "msg3=%fg%                    Balanced preset: installed                   "
 set "msg4=%fg%                  Performance preset:  installed                 "
 set "msg5=%fg%                     Potato preset: installed                    "
 set "msg6=%fg%             💀 May God have mercy upon your soul 💀             "
-set "msg7=%fg%               Steam Deck: Installed %fo1%- on Windows 💀             "
+set "msg7=%fg%              Steam Deck Q: Installed %fo1%- on Windows 💀            "
+set "msg8=%fg%              Steam Deck P: Installed %fo1%- on Windows 💀            "
 set "msgc=%fg%                   Cache was cleared and locked                  "
 set "msgu=%fg%                          Cache restored                         "
 set "msge=%fr%        Something went wrong :^( - Install the mod manually.      "
@@ -71,7 +72,7 @@ if not defined cfglocal goto notinstalled
 
 :: This checks if the user have extracted all the files.
 set extracted=yes
-for %%G in (1_Lossless 2_Quality 3_Balanced 4_Performance 5_Potato 6_Monstrosity 7_Steamdeck) do (if not exist "%~dp0%%G" (set extracted=no))
+for %%G in (1_Lossless 2_Quality 3_Balanced 4_Performance 5_Potato 6_Monstrosity 7_Steamdeck_q 8_Steamdeck_p) do (if not exist "%~dp0%%G" (set extracted=no))
 if %extracted%==no (goto notextracted) else (goto menu)
 ::
 
@@ -129,7 +130,8 @@ echo     %fo1%[3]%fw% Balanced%fo0%:::: %fo1%The perfect balance.         -%fw% 
 echo     %fo1%[4]%fw% Performance%fo0%: %fo1%A miracle. Huge FPS boost^^!   -%fw% 127%% Boost
 echo     %fo1%[5]%fw% Potato%fo0%:::::: %fo1%Low-end - Ugly but playable  -%fw% 201%% Boost
 echo     %fo1%[6]%fw% Monstrosity%fo0%: %fo1%Hell. Don't do this...       -%fw% 261%% Boost
-echo     %fo1%[7]%fw% Steam Deck%fo0%:: %fo1%BETA - Waiting for feedbacks...%fw%
+echo:
+echo     %fo1%[7]%fw% Steam Deck Quality  ^|  %fo1%[8]%fw% Steam Deck Performance
 echo:
 echo     %fob1%%fo1%    Info + Extras    %blb%%fw%
 echo     %fo1%[A]%fw% IMPORTANT: USE THIS OPTIMIZED IN-GAME SETTINGS
@@ -157,7 +159,8 @@ if %choice%==3 (set    "inifolder=3_Balanced" & set msg=%msg3% & call :installin
 if %choice%==4 (set "inifolder=4_Performance" & set msg=%msg4% & call :installini & call :clearcache & call :lockcache & goto menu)
 if %choice%==5 (set      "inifolder=5_Potato" & set msg=%msg5% & call :installini & call :clearcache & call :lockcache & goto menu)
 if %choice%==6 (set "inifolder=6_Monstrosity" & set msg=%msg6% & call :installini & call :clearcache & call :lockcache & goto menu)
-if %choice%==7 (set "inifolder=7_Steamdeck" & set msg=%msg7% & call :installini & call :clearcache & call :lockcache & goto menu)
+if %choice%==7 (set "inifolder=7_Steamdeck_q" & set msg=%msg7% & call :installini & call :clearcache & call :lockcache & goto menu)
+if %choice%==8 (set "inifolder=8_Steamdeck_p" & set msg=%msg8% & call :installini & call :clearcache & call :lockcache & goto menu)
 ::
 :: Easy-to-read
 if /i %choice%==a (goto settings)
