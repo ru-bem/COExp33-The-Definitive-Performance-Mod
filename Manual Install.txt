@@ -27,23 +27,18 @@
 ::--------------------------------------------------------------::
 ::                                                              ::
 ::  06 - Run the game, go to Graphics options and do this:      ::
+::            Feel free to try other combinations               ::
 ::                                                              ::
-::---- Preset:       High (Affects a lot of other variables)    ::
-::---- Scaling Type: DLSS or XESS or TSR, in this order.        ::
-::---- Scaling Mode: Quality                                    ::
-::----                                                          ::
-::---- AA:           Epic - Only relevant for TSR               ::
-::---- Shadows:      High - Decrease for more performance       ::
-::---- GI:           High - Decrease for more performance       ::
-::---- Reflection:   Epic                                       ::
-::---- Post Process: Low                                        ::
-::---- Texture:      Epic                                       ::
-::---- Visual FX:    High                                       ::
-::---- Foliage:      High or Medium                             ::
-::---- Shading:      High                                       ::
+::   🤩 High end (RTX 4070+): High preset + Lossless ini        ::
+::   😎 Mid end (RTX 3060~): High preset + Quality ini          ::
+::   😄 Mid-low end (RTX 2060~): High preset + Quality ini      ::
+::   😊 Low end (RTX 3050~): Medium preset + Balanced ini       ::
+::   😐 Very old (GTX 1050~): Medium preset + Performance ini   ::
+::   💀 (GT 1030~): Low preset + Potato ini                     ::
 ::                                                              ::
+::   Scaling Type priority order: DLSS > XESS > TSR             ::
 ::                                                              ::
-::     Have fun!                                                ::
+::   Have fun!                                                  ::
 ::                                                              ::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
