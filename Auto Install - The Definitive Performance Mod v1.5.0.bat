@@ -56,6 +56,12 @@ set "msg8=%fg%              Steam Deck P: Installed %fo1%- on Windows 💀      
 set "msgc=%fg%                    Cache:  cleared and locked                   "
 set "msgu=%fg%                          Cache restored                         "
 set "msge=%fr%        Something went wrong :^( - Install the mod manually.      "
+set "msgf=%fr%                    This isn't a valid choice                    "
+set "blnk=                                                                  "
+set "upd0=%fg%                       Update DLSS and XESS                      "
+set "upd1=%fr%       The script cannot access this folder. Run as admin.       "
+set "upd2=%fr%                         Invalid Location                        "
+set "upd3=%fg%    The script can access this folder %fr%but the game isn't here    "
 ::
 
 
@@ -111,17 +117,17 @@ echo:
 echo   Press any key to close the mod menu...
 pause >nul & exit
 
-
 :: Here's the fancy menu with colors and everything.
 :menu
 %menusize%
 cls
 
-:: This places the header on top of the menu. You can find this header below on the code.
+:: This places the header on top of the menu. You can find this header above on the code.
 call :header
 
 :: Those %% below are for applying the colors.
-echo     %fob1%%fo1%    PRESETS    %blb%%fw%
+echo:
+echo     %fob1%%fo1%                           INIs                           %blb%%fw%
 echo     %fo1%[0]%fw% Default%fo0%::::: %fo1%Original graphics            -%fw%   0%% Boost
 echo     %fo1%[1]%fw% Lossless%fo0%:::: %fo1%Almost identical to Original -%fw%  70%% Boost
 echo     %fo1%[2]%fw% Quality%fo0%::::: %fo1%High quality (Recommended)   -%fw%  80%% Boost
@@ -131,11 +137,11 @@ echo     %fo1%[5]%fw% Potato%fo0%:::::: %fo1%Low-end - Ugly but playable  -%fw% 
 echo     %fo1%[6]%fw% Monstrosity%fo0%: %fo1%Hell. Don't do this...       -%fw% 261%% Boost
 echo     %fo1%[7]%fw% Steam Deck Quality %fo0%:::::::: %fo1%[8]%fw% Steam Deck Performance
 echo:
-echo     %fob1%%fo1%    Info + Extras    %blb%%fw%
-echo     %fo1%[A]%fw% Optimized In-game Settings
-echo     %fo1%[B]%fw% Clear + lock Exp33 cache file.
-echo     %fo1%[C]%fw% Restore cache file to default.
-echo     %fo1%[D]%fw% More details
+echo:
+echo     %fob1%%fo1%                          EXTRAS                          %blb%%fw%
+echo     %fo1%[A]%fw% Recommended Game Settings %fo0%::::: %fo1%[B]%fw% Update DLSS + XESS
+echo     %fo1%[C]%fw% Clear + lock ex33 cache %fo0%:::::::::::: %fo1%[D]%fw% Restore cache
+echo     %fo1%[E]%fw% Official mod page
 echo:
 echo     %fo1%[X]%fw% Exit
 echo:
@@ -162,13 +168,14 @@ if %choice%==8 (set "inifolder=8_Steamdeck_p" & set msg=%msg8% & call :installin
 ::
 :: Easy-to-read
 if /i %choice%==a (goto settings)
-if /i %choice%==b (call :clearcache & call :lockcache & set msg=%msgc% & goto menu)
-if /i %choice%==c (call :clearcache & set msg=%msgu% & goto menu)
-if /i %choice%==d (start https://www.nexusmods.com/clairobscurexpedition33/mods/308 & goto menu)
-if /i %choice%==x (exit)
+if /i %choice%==b (set msg=%upd0% & goto updateupscaling)
+if /i %choice%==c (call :clearcache & call :lockcache & set msg=%msgc% & goto menu)
+if /i %choice%==d (call :clearcache & set msg=%msgu% & goto menu)
+if /i %choice%==e (start https://www.nexusmods.com/clairobscurexpedition33/mods/308 & goto menu)
+if /i %choice%==x (if exist "%temp%\DLSS_XESS" (rd /s /q "%temp%\DLSS_XESS") & exit)
 ::
 :: If the user make unavailable choice this message will be shown.
-set "msg=%fr%                    This isn't a valid choice.                    " & goto menu
+set msg=%msgf% & goto menu
 ::
 
 
@@ -196,16 +203,6 @@ echo %blb%%fw%                     Press any key to go back
 pause >nul
 goto menu
 
-:: This clears + unlock the Exp33 cache
-:clearcache
-for %%G in (ushaderprecache upipelinecache jnl) do (del /f /q "%LocalAppData%\Sandfall\Saved\*.%%G" >nul 2>&1)
-goto:eof
-
-:: This Locks the cache file
-:lockcache
-for %%G in ("%LocalAppData%\Sandfall\Saved\Sandfall_PCD3D_SM6.upipelinecache") do (type NUL > %%G & ATTRIB +R %%G >nul 2>&1)
-goto:eof
-
 
 :: This is the main header. Those "%something%" are the colors.
 :header
@@ -219,4 +216,140 @@ echo %fob2%                  %fo3%The Definitive Performance Mod
 echo %fob3%                                                                  
 echo [1A%fob3%%msg%%blb%
 echo:
+goto:eof
+
+
+::
+:: Update DLSS and XESS Section
+::
+
+:: First you need to paste your game location
+:updateupscaling
+cls
+call :header
+echo:
+:: This will verify if the script is running as admin
+echo %fg%                   Where is your game located ?
+echo %fg%           - PASTE YOUR GAME'S FOLDER LOCATION BELOW -
+echo:
+echo %fo1%                    OR type [1] to go back.           
+
+:: If it's not running as admin, this will show and you can type 2 to elevate.
+net session >nul 2>&1 || (echo %fo1%        OR type [2] to run this script with admin rights.)
+echo:
+echo:
+set /p gamelocation=%blf%--%fw%[
+set gamelocation="%gamelocation%" & goto updatev0
+
+:: First verifications
+:updatev0
+if %gamelocation%=="1" set msg=%blnk% & goto menu
+if %gamelocation%=="2" (if not "%1"=="am_admin" (chcp 437 >nul & powershell -command "Start-Process -Verb RunAs -FilePath '%0' -ArgumentList 'am_admin'" & chcp 65001 >nul & exit /b) else (goto :updateupscaling))
+echo %gamelocation% | find ":\"
+if %errorlevel% NEQ 0 (set msg=%upd2% & goto updateupscaling)
+pushd %gamelocation%
+type NUL > tdpm.tdpm & if NOT exist tdpm.tdpm (set permission=0 & set msg=%upd1% & goto updateupscaling) else (del /f /s /q tdpm.tdpm & set permission=1 & goto updatev1)
+
+:: Then it'll verify if you pasted the root folder
+:updatev1
+cls
+call :header
+echo     Verifying.
+if exist "%cd%\Sandfall" (set glocation=root & goto set_upscalers) else (goto updatev2)
+
+:: If not, it'll verify if you pasted the .exe folder
+:updatev2
+cls
+call :header
+echo     Verifying..
+if exist "*shipping.exe" (set glocation=exe & goto set_upscalers) else (goto cantupdate)
+
+:: If you pasted root folder, then set folders as variables and go to update confirmation.
+:: If you pasted .exe folder, then go up to the root folder, set folders as variables and go to update confirmation.
+:set_upscalers
+if %glocation%==root (call :set_upscalers_folders & goto canupdate)
+if %glocation%==exe (cd .. & cd .. & cd .. & call :set_upscalers_folders & goto canupdate)
+
+:set_upscalers_folders
+set "dlssfolder=%cd%\Sandfall\Plugins\NVIDIA\DLSS\Binaries\ThirdParty\Win64\"
+set "xessfolder=%cd%\Engine\Plugins\Marketplace\XeSS\Binaries\ThirdParty\Win64\"
+goto:eof
+
+:: After all the verifications you'll go to here
+:canupdate
+set msg=%upd0%
+cls
+call :header
+echo:
+echo %fg%    Verification done^^!
+echo     Everything is ok and it's safe to continue^^!
+echo:
+echo     %fo1%[1]%fw% Update DlSS and XESS
+echo     %fo1%[2]%fw% Go back to main menu
+echo:
+set /p updtchoice=%fo1%----[
+if %updtchoice%==1 goto startupdate
+if %updtchoice%==2 set msg=%blnk% & goto menu
+set msg=%msgf% & goto canupdate
+
+:: If something went wrong on verification stage you'll go back to the UpdateUpscaling menu
+:cantupdate
+popd & if %permission%==1 (set msg=%upd3% & goto updateupscaling) else (set msg=%upd2% & goto updateupscaling)
+
+:: If everything is ok this will begin the update process
+:startupdate
+cls
+call :header
+
+:: Create a folder called "DLSS_XESS" on users temporary folder
+if NOT exist "%temp%\DLSS_XESS" (md "%temp%\DLSS_XESS")
+echo:
+
+:: Downloads DLSS 4 DLL from NVIDIA's DLSS github page
+echo %fw%    Downloading DLSS 4 DLL%fo1%
+curl -# -o "%temp%\DLSS_XESS\nvngx_dlss.dll" "https://raw.githubusercontent.com/NVIDIA/DLSS/refs/heads/main/lib/Windows_x86_64/rel/nvngx_dlss.dll"
+echo:
+
+:: Downloads XESS DLL from INTEL's XESS github page
+echo %fw%    Downloading XESS %fo1%[1/4]
+curl -# -o "%temp%\DLSS_XESS\libxess_dx11.dll" "https://raw.githubusercontent.com/intel/xess/refs/heads/main/bin/libxess_dx11.dll"
+echo %fw%[2A    Downloading XESS %fo1%[2/4]
+curl -# -o "%temp%\DLSS_XESS\libxell.dll" "https://raw.githubusercontent.com/intel/xess/refs/heads/main/bin/libxell.dll"
+echo %fw%[2A    Downloading XESS %fo1%[3/4]
+curl -# -o "%temp%\DLSS_XESS\libxess_fg.dll" "https://raw.githubusercontent.com/intel/xess/refs/heads/main/bin/libxess_fg.dll"
+echo %fw%[2A    Downloading XESS %fo1%[4/4]
+curl -# -o "%temp%\DLSS_XESS\libxess.dll" "https://raw.githubusercontent.com/intel/xess/refs/heads/main/bin/libxess.dll"
+echo:
+
+echo %fw%    Updating EXP33 DLSS...
+:: Verify if there's already an old backup for any of the dlls and deletes it if so.
+if exist "%dlssfolder%*.old" (del "%dlssfolder%*.old" >nul 2>&1)
+:: Make a new backup of the DLL installed by adding .old on the end of the file.
+ren "%dlssfolder%*" "*?.old" >nul 2>&1
+:: Copy the DLSS DLL to the correct folder.
+robocopy "%temp%\\DLSS_XESS\\" "%dlssfolder%\" nvngx_dlss.dll >nul 2>&1
+
+echo     Updating EXP33 XESS...
+:: Verify if there's already an old backup for any of the dlls and deletes it if so.
+if exist "%xessfolder%*.old" (del "%xessfolder%*.old" >nul 2>&1)
+:: Make a new backup of the DLL installed by adding .old on the end of the file.
+ren "%xessfolder%*" "*?.old" >nul 2>&1
+:: Copy the XESS DLL to the correct folder.
+robocopy "%temp%\\DLSS_XESS\\" "%xessfolder%\" libxe* >nul 2>&1
+echo:
+
+echo %fg%    Done^^!
+echo %fo1%    Press any key to go back to menu
+pause >nul
+goto menu
+
+
+:: This clears + unlock the Exp33 cache
+:clearcache
+for %%G in (ushaderprecache upipelinecache jnl) do (del /f /q "%LocalAppData%\Sandfall\Saved\*.%%G" >nul 2>&1)
+goto:eof
+
+:: This Locks the cache file
+:lockcache
+for %%G in ("%LocalAppData%\Sandfall\Saved\Sandfall_PCD3D_SM6.upipelinecache") do (type NUL > %%G & ATTRIB +R %%G >nul 2>&1)
 goto:eof
