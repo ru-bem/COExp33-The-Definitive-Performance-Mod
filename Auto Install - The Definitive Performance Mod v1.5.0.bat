@@ -7,7 +7,7 @@
 ::
 
 
-:: This lines tells the cmd to show you only the necessary, sets the mod version, window size, page code and the title.
+:: These lines tells the cmd to show you only the necessary, sets the mod version, window size, page code and the title.
 @echo off
 setlocal EnableDelayedExpansion
 set modver=v1.5.0
@@ -17,14 +17,14 @@ title The Definitive Performance Mod - %modver% - github.com/ru-bem
 ::
 
 
-:: Shows a loading message on screen. You'll only see this if you use a very, very, very slow pc.
+:: Shows a loading message on screen. You'll only see this if you use a VERY, VERY, VERY slow pc.
 echo: & echo ::: COExp33 - The Definitive Performance Mod :::
 echo: & echo     Loading auto-install script...
 echo: & echo     This shouldn't take more than 1 second...
 ::
 
 
-:: These lines below sets the colors used for the interface.
+:: These lines below sets the colors used for the interface. https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit
 set blf=[30m
 set blb=[40m
 set fr=[31m
@@ -42,7 +42,8 @@ set fo5=[38;2;255;249;242m
 ::
 
 
-:: One of these messages will be shown depending on the user's choice.
+:: These are the messages that can be shown depending on the user's choice.
+set "blnk=                                                                  "
 set  "msg=%fw%               Type a number/letter and press enter              "
 set "msg0=%fg%                     Using the Default preset                    "
 set "msg1=%fg%                    Lossless preset: installed                   "
@@ -57,7 +58,6 @@ set "msgc=%fg%                    Cache:  cleared and locked                   "
 set "msgu=%fg%                          Cache restored                         "
 set "msge=%fr%        Something went wrong :^( - Install the mod manually.      "
 set "msgf=%fr%                    This isn't a valid choice                    "
-set "blnk=                                                                  "
 set "upd0=%fg%                       Update DLSS and XESS                      "
 set "upd1=%fr%       The script cannot access this folder. Run as admin.       "
 set "upd2=%fr%                         Invalid Location                        "
@@ -78,13 +78,23 @@ if not defined cfglocal goto notinstalled
 
 :: This checks if the user have extracted all the files.
 set extracted=yes
-for %%G in (1_Lossless 2_Quality 3_Balanced 4_Performance 5_Potato 6_Monstrosity 7_Steamdeck_q 8_Steamdeck_p) do (if not exist "%~dp0%%G" (set extracted=no))
+for %%G in (
+1_Lossless
+2_Quality
+3_Balanced
+4_Performance
+5_Potato
+6_Monstrosity
+7_Steamdeck_q
+8_Steamdeck_p
+) do (if not exist "%~dp0%%G" (set extracted=no))
 if %extracted%==no (goto notextracted) else (goto menu)
 ::
 
 
 :: If the user hasn't extracted the files then goto here.
 :notextracted
+set msg=%blnk%
 cls
 call :header
 echo:
@@ -102,7 +112,7 @@ exit
 ::
 
 
-:: If the game isn't installed then goto here.
+:: If the game isn't installed you'll see this.
 :notinstalled
 cls
 call :header
@@ -122,7 +132,7 @@ pause >nul & exit
 %menusize%
 cls
 
-:: This places the header on top of the menu. You can find this header above on the code.
+:: This places the header on top of the menu. You can find this header below on the code.
 call :header
 
 :: Those %% below are for applying the colors.
@@ -174,28 +184,32 @@ if /i %choice%==d (call :clearcache & set msg=%msgu% & goto menu)
 if /i %choice%==e (start https://www.nexusmods.com/clairobscurexpedition33/mods/308 & goto menu)
 if /i %choice%==x (if exist "%temp%\DLSS_XESS" (rd /s /q "%temp%\DLSS_XESS") & exit)
 ::
-:: If the user make unavailable choice this message will be shown.
+:: If the user make an unavailable choice this message will be shown.
 set msg=%msgf% & goto menu
 ::
 
 
+::
 :: This is how the script installs the mod.
-:: robocopy will copy all the files inside the selected preset folder to the default Exp33 config location.
-:: If everything works it will show you a message, if not, it will show you another message.
-:: After that it will call an function to set the files to read-only.
 :installini
+:: robocopy will copy all the files inside the selected preset folder to the default Exp33 config location.
 robocopy "%~dp0%inifolder%\\" "%cfglocal%\\" *.* >nul 2>&1
+:: If everything works it will show you a message, if not, it will show you another message.
 if not exist "%cfglocal%\Engine.ini" set msg=%msge%
+:: After that it will set the files to read-only.
 for %%G in (Engine.ini Scalability.ini) do (ATTRIB +R "%cfglocal%\%%G")
 goto:eof
 ::
 
 
-:: This will load the txt file with the needed In-Game Settings inside the program so you can see what you need to change.
+:: This will load the txt file with the recommended settings inside the program for you to read.
 :settings
+:: Sets the background color
 echo %fob2%
 cls
+:: Window size
 mode con:cols=66 lines=40
+:: Load the txt file
 type "%~dp0IMPORTANT - In-Game Settings.txt"
 echo:
 echo:
@@ -219,70 +233,79 @@ echo:
 goto:eof
 
 
+
+::
 ::
 :: Update DLSS and XESS Section
 ::
-
+::
 :: First you need to paste your game location
 :updateupscaling
 cls
 call :header
 echo:
-:: This will verify if the script is running as admin
 echo %fg%                   Where is your game located ?
 echo %fg%           - PASTE YOUR GAME'S FOLDER LOCATION BELOW -
 echo:
 echo %fo1%                    OR type [1] to go back.           
-
-:: If it's not running as admin, this will show and you can type 2 to elevate.
+::
+::
+:: If it's not running as admin, you'll see an option to elevate.
 net session >nul 2>&1 || (echo %fo1%        OR type [2] to run this script with admin rights.)
 echo:
 echo:
 set /p gamelocation=%blf%--%fw%[
 set gamelocation="%gamelocation%" & goto updatev0
-
-:: First verifications
-:: If you type 1 it'll send you back to menu
-:: If you type 2 it'll elevate the script to admin
-:: If you type anything else ii'll verify if it's a folder address, if yes, it'll try to create an empty file to test if the script is able to 
+::
+::
+:: After you make a choice the code will start it's first verifications
 :updatev0
+:: If you type 1 it'll send you back to menu
 if %gamelocation%=="1" set msg=%blnk% & goto menu
+:: If you type 2 it'll elevate the script to admin
 if %gamelocation%=="2" (if not "%1"=="am_admin" (chcp 437 >nul & powershell -command "Start-Process -Verb RunAs -FilePath '%0' -ArgumentList 'am_admin'" & chcp 65001 >nul & exit /b) else (goto :updateupscaling))
+:: If you type anything else ii'll verify if it's a folder address.
 echo %gamelocation% | find ":\"
+:: If it's not, it'll show you an error message.
 if %errorlevel% NEQ 0 (set msg=%upd2% & goto updateupscaling)
+:: if yes, it'll try to create an empty file to test if the script has permission to write here.
 pushd %gamelocation%
 echo     Checking permissions...
 echo     If "Access denied" you'll need to run the script as admin.
 type NUL > tdpm.tdpm & if NOT exist tdpm.tdpm (set permission=0 & set msg=%upd1% & goto updateupscaling) else (del /f /s /q tdpm.tdpm >nul 2>&1 & set permission=1 & goto updatev1)
-
-:: Then it'll verify if you pasted the root folder
+::
+::
+:: If the script has enough rights, then it'll verify if you pasted the root folder
 :updatev1
 cls
 call :header
 echo     Verifying....
 if exist "%cd%\Sandfall" (set glocation=root & goto set_upscalers) else (goto updatev2)
-
-:: If not, it'll verify if you pasted the .exe folder
+::
+::
+:: If it's not the root folder, it'll verify if you pasted the .exe folder
 :updatev2
 cls
 call :header
 echo     Verifying....
 if exist "*shipping.exe" (set glocation=exe & goto set_upscalers) else (goto cantupdate)
-
-:: If you pasted root folder, then set folders as variables and go to update confirmation.
-:: If you pasted .exe folder, then go up to the root folder, set folders as variables and go to update confirmation.
+::
+::
 :set_upscalers
+:: If you pasted root folder, the script will store the dlss and xess folders as variables and go to update confirmation.
 if %glocation%==root (call :set_upscalers_folders & goto canupdate)
+:: If you pasted .exe folder, the script will go up three times to the root folder, set the dlss and xess folders as variables and go to update confirmation.
 if %glocation%==exe (cd .. & cd .. & cd .. & call :set_upscalers_folders & goto canupdate)
-
+::
 :set_upscalers_folders
 set "dlssfolder=%cd%\Sandfall\Plugins\NVIDIA\DLSS\Binaries\ThirdParty\Win64\"
 set "xessfolder=%cd%\Engine\Plugins\Marketplace\XeSS\Binaries\ThirdParty\Win64\"
 if NOT exist "%dlssfolder%nvngx_dlss.dll" set msg=%upd2% & goto updateupscaling
 if NOT exist "%xessfolder%libxess.dll" set msg=%upd2% & goto updateupscaling
 goto:eof
-
-:: After all the verifications you'll go to here
+::
+::
+:: After all the verifications you'll go to this small confirmation menu.
 :canupdate
 set msg=%upd0%
 cls
@@ -298,25 +321,30 @@ set /p updtchoice=%fo1%----[
 if %updtchoice%==1 goto startupdate
 if %updtchoice%==2 set msg=%blnk% & goto menu
 set msg=%msgf% & goto canupdate
-
-:: If something went wrong on verification stage you'll go back to the UpdateUpscaling menu
+::
+::
+:: If something went wrong on verification stage you'll go back to the UpdateUpscaling menu.
 :cantupdate
 popd & if %permission%==1 (set msg=%upd3% & goto updateupscaling) else (set msg=%upd2% & goto updateupscaling)
-
-:: If everything is ok this will begin the update process
+::
+::
+:: If everything is ok this will begin the update process.
 :startupdate
 cls
 call :header
-
-:: Create a folder called "DLSS_XESS" on users temporary folder
+::
+::
+:: If not present, creates a folder called "DLSS_XESS" on users temporary folder.
 if NOT exist "%temp%\DLSS_XESS" (md "%temp%\DLSS_XESS")
 echo:
-
+::
+::
 :: Downloads DLSS 4 DLL from NVIDIA's DLSS github page
 echo %fw%    Downloading DLSS 4 DLL%fo1%
 curl -# -o "%temp%\DLSS_XESS\nvngx_dlss.dll" "https://raw.githubusercontent.com/NVIDIA/DLSS/refs/heads/main/lib/Windows_x86_64/rel/nvngx_dlss.dll"
 echo:
-
+::
+::
 :: Downloads XESS DLL from INTEL's XESS github page
 echo %fw%    Downloading XESS %fo1%[1/4]
 curl -# -o "%temp%\DLSS_XESS\libxess_dx11.dll" "https://raw.githubusercontent.com/intel/xess/refs/heads/main/bin/libxess_dx11.dll"
