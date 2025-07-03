@@ -7,6 +7,11 @@
 ::                                                              ::
 ::--------------------------------------------------------------::
 ::                                                              ::
+::  00 - If you're on Windows, use auto install and skip to     ::
+::       step 06. If you want to install manually > Step 01     ::
+::                                                              ::
+::--------------------------------------------------------------::
+::                                                              ::
 ::                                                              ::
 ::  01 - Choose any preset and open it's folder.                ::
 ::       "2_Quality" for example.                               ::

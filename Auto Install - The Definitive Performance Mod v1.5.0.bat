@@ -242,26 +242,31 @@ set /p gamelocation=%blf%--%fw%[
 set gamelocation="%gamelocation%" & goto updatev0
 
 :: First verifications
+:: If you type 1 it'll send you back to menu
+:: If you type 2 it'll elevate the script to admin
+:: If you type anything else ii'll verify if it's a folder address, if yes, it'll try to create an empty file to test if the script is able to 
 :updatev0
 if %gamelocation%=="1" set msg=%blnk% & goto menu
 if %gamelocation%=="2" (if not "%1"=="am_admin" (chcp 437 >nul & powershell -command "Start-Process -Verb RunAs -FilePath '%0' -ArgumentList 'am_admin'" & chcp 65001 >nul & exit /b) else (goto :updateupscaling))
 echo %gamelocation% | find ":\"
 if %errorlevel% NEQ 0 (set msg=%upd2% & goto updateupscaling)
 pushd %gamelocation%
-type NUL > tdpm.tdpm & if NOT exist tdpm.tdpm (set permission=0 & set msg=%upd1% & goto updateupscaling) else (del /f /s /q tdpm.tdpm & set permission=1 & goto updatev1)
+echo     Checking permissions...
+echo     If "Access denied" you'll need to run the script as admin.
+type NUL > tdpm.tdpm & if NOT exist tdpm.tdpm (set permission=0 & set msg=%upd1% & goto updateupscaling) else (del /f /s /q tdpm.tdpm >nul 2>&1 & set permission=1 & goto updatev1)
 
 :: Then it'll verify if you pasted the root folder
 :updatev1
 cls
 call :header
-echo     Verifying.
+echo     Verifying....
 if exist "%cd%\Sandfall" (set glocation=root & goto set_upscalers) else (goto updatev2)
 
 :: If not, it'll verify if you pasted the .exe folder
 :updatev2
 cls
 call :header
-echo     Verifying..
+echo     Verifying....
 if exist "*shipping.exe" (set glocation=exe & goto set_upscalers) else (goto cantupdate)
 
 :: If you pasted root folder, then set folders as variables and go to update confirmation.
@@ -273,6 +278,8 @@ if %glocation%==exe (cd .. & cd .. & cd .. & call :set_upscalers_folders & goto 
 :set_upscalers_folders
 set "dlssfolder=%cd%\Sandfall\Plugins\NVIDIA\DLSS\Binaries\ThirdParty\Win64\"
 set "xessfolder=%cd%\Engine\Plugins\Marketplace\XeSS\Binaries\ThirdParty\Win64\"
+if NOT exist "%dlssfolder%nvngx_dlss.dll" set msg=%upd2% & goto updateupscaling
+if NOT exist "%xessfolder%libxess.dll" set msg=%upd2% & goto updateupscaling
 goto:eof
 
 :: After all the verifications you'll go to here
