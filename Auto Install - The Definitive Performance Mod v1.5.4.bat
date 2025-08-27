@@ -10,7 +10,7 @@
 :: These lines tells the cmd to show you only the necessary, sets the mod version, window size, page code and the title.
 @echo off
 setlocal EnableDelayedExpansion
-set modver=v1.5.3
+set modver=v1.5.4
 set "menusize=mode con:cols=66 lines=33"
 chcp 65001 >nul
 title The Definitive Performance Mod - %modver% - github.com/ru-bem
