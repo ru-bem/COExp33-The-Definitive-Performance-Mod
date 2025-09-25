@@ -24,27 +24,27 @@ The game as intended by the developers. Play this way if you have enough perform
 - **🟰 Lossless:** +70% <br>
 The closest possible to the original. This is almost free performance.
 
-- ⚪ Quality: +80% <br>
+- **⚪ Quality:** +80% <br>
 Very high quality. Only small visual changes were made for more performance.
 
-- ⚖️ Balanced: +105% <br>
+- **⚖️ Balanced:** +105% <br>
 Same as quality but with little less quality lumen and shadows (basically).
 
-- ⏩ Performance: +127% <br>
+- **⏩ Performance:** +127% <br>
 A miracle. Expedition 33 fully playable without lumen. Huge performance increase.
 
-- 🥔 Potato: +201% <br>
+- **🥔 Potato:** +201% <br>
 For low end PCs. Total focus on performance. Very ugly but playable.
 Ajust the line r.Color.Mid=0.4 to control the brightness. The higher the value, the brighter the game will be.
 
-- 💀 Monstrosity: +261% <br>
+- **💀 Monstrosity:** +261% <br>
 Hell. Broken visuals and unplayable devilishness. This costs your soul and shouldn't be used at all.
 
-- 🎮 Steam Deck Quality <br>
+- **🎮 Steam Deck Quality** <br>
 Optimized for Steam Deck (30fps)
 Use with XESS + Low Preset
 
-- 🎮 Steam Deck Performance <br>
+- **🎮 Steam Deck Performance** <br>
 Optimized for Steam Deck (45fps)
 Use with XESS + Low Preset
 ⚠️ Expect some visual issues on specific areas of the game using this preset.
