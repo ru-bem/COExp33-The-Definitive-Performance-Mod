@@ -17,6 +17,7 @@ Have fun!
 
 # 📈 Presets
  <br>
+ 
 - **🟢 Original:** +0% <br>
 The game as intended by the developers. Play this way if you have enough performance!
 
