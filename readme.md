@@ -101,22 +101,27 @@ Scaling Type priority order: DLSS > XESS > TSR
 Benefits:<br>
 Much better looking upscaling  +  Slightly better performance  +  Less vram usage  +  Less ghosting
 
-### Easiest method:
+### **Easiest method:**
 Auto Install comes with an option to automatically update DLSS and XESS.
 - Open the script, Type [B] and press enter.
 - Copy and Paste your game's folder location here then press enter.
 - If the folder is valid you'll be prompted to confirm that you want to update. Type [1], press enter and wait until the end of the process.
 
-### Manual method
-DLSS 4:
-- Download the latest version of the DLSS DLL from here:
-https://raw.githubusercontent.com/NVIDIA/DLSS/refs/heads/main/lib/Windows_x86_64/rel/nvngx_dlss.dll﻿
-- Copy and paste this file into: [gamefolder]\Sandfall\Plugins\NVIDIA\DLSS\Binaries\ThirdParty\Win64
+### **Manual Method:**
 
-XESS:
-- Download the latest version of XESS using this link: https://github.com/intel/xess/releases/download/v2.0.1/XeSS_SDK_2.0.1.zip﻿
-- Open the .zip, go to bin folder and extract the 4 .dll files (libxell, libxess, libxess_dx11 and libxess_fg) into:
-[gamefolder]/Engine/Plugins/Marketplace/XeSS/Binaries/ThirdParty/Win64/
+DLSS 4 (v310.4.0): <br>
+1 - Download these two DLLs: <br>
+https://raw.githubusercontent.com/NVIDIA/DLSS/refs/heads/main/lib/Windows_x86_64/rel/nvngx_dlss.dll﻿  <br>
+https://raw.githubusercontent.com/NVIDIA/DLSS/refs/heads/main/lib/Windows_x86_64/rel/nvngx_dlssd.dll﻿﻿  <br>
+2 - Copy them into: [gamefolder]\Sandfall\Plugins\NVIDIA\DLSS\Binaries\ThirdParty\Win64
+
+XESS (v2.1.0): <br>
+1 - Download these four DLLs: <br>
+https://github.com/intel/xess/raw/refs/heads/main/bin/libxell.dll﻿ <br>
+https://github.com/intel/xess/raw/refs/heads/main/bin/libxess.dll﻿ <br>
+https://github.com/intel/xess/raw/refs/heads/main/bin/libxess_dx11.dll﻿ <br>
+https://github.com/intel/xess/raw/refs/heads/main/bin/libxess_fg.dll﻿ <br>
+2 - Copy them into: [gamefolder]/Engine/Plugins/Marketplace/XeSS/Binaries/ThirdParty/Win64/
 
 <br>
 
