@@ -4,7 +4,6 @@
 ##### ⬇️ Only download this mod from [Nexus Mods](https://www.nexusmods.com/clairobscurexpedition33/mods/308) or from [Github](https://github.com/ru-bem/COExp33-The-Definitive-Performance-Mod/releases/latest). Please report if you see this being distributed anywhere else. <br><br> Also remember: This mod is and will be free forever.<br> If this made your game better and you'd like to say thanks, a donation helps a lot more than you can imagine!
 
 [![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/kofi.png)](https://ko-fi.com/rubem) [![](https://raw.githubusercontent.com/ru-bem/COExp33-The-Definitive-Performance-Mod/refs/heads/main/assets/livepix.png)](https://livepix.gg/rubem)
-ℹ️ This mod was made by testing hundreds of UE5 console variables, one by one.
 
 --- 
 ### **AMD GPU owners:**<br>
@@ -17,17 +16,37 @@ Have fun!
 <br>
 
 # 📈 Presets
+ <br>
+- **🟢 Original:** +0% <br>
+The game as intended by the developers. Play this way if you have enough performance!
 
-Each preset gives you different boosts depending of what you want.
+- **🟰 Lossless:** +70% <br>
+The closest possible to the original. This is almost free performance.
 
-- **🟰 Lossless: +70%** - The closest possible to the original. This is basically free performance and better graphics.
-- **⚪ Quality: +80%** - Very high quality. Only small visual changes were made for performance.
-- **⚖️ Balanced: 105%%** - Same as quality but with little less quality lumen and shadows (basically).
-- **⏩ Performance: 127%** - A miracle. No lumen but you won't even notice. Huge performance increase.
-- **🥔 Potato: +201%** - For low end PCs. Total focus on performance. Ugly but playable.
-- **💀 Monstrosity: +261%** - Hell. Broken visuals and unplayable devilishness. This costs your soul and shouldn't be used at all.
-- **🎮 Steam Deck Quality** - Optimized for Steam Deck (30fps) - Use with XESS + Low Preset
-- **🎮 Steam Deck Performance** - Optimized for Steam Deck (45fps) - Use with XESS + Low Preset - ⚠️ Expect some visual issues on specific areas of the game using this preset.
+- ⚪ Quality: +80% <br>
+Very high quality. Only small visual changes were made for more performance.
+
+- ⚖️ Balanced: +105% <br>
+Same as quality but with little less quality lumen and shadows (basically).
+
+- ⏩ Performance: +127% <br>
+A miracle. Expedition 33 fully playable without lumen. Huge performance increase.
+
+- 🥔 Potato: +201% <br>
+For low end PCs. Total focus on performance. Very ugly but playable.
+Ajust the line r.Color.Mid=0.4 to control the brightness. The higher the value, the brighter the game will be.
+
+- 💀 Monstrosity: +261% <br>
+Hell. Broken visuals and unplayable devilishness. This costs your soul and shouldn't be used at all.
+
+- 🎮 Steam Deck Quality <br>
+Optimized for Steam Deck (30fps)
+Use with XESS + Low Preset
+
+- 🎮 Steam Deck Performance <br>
+Optimized for Steam Deck (45fps)
+Use with XESS + Low Preset
+⚠️ Expect some visual issues on specific areas of the game using this preset.
 
 Performance gains may vary depending on your hardware. This was tested on: **R5 3600 + RTX 2060 + 16gb RAM + DLSS 4**
 
