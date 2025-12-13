@@ -11,7 +11,7 @@
 ::                                                              ::
 ::   🤩 High end (RTX 4070+): High preset + Lossless ini        ::
 ::   😎 Mid end (RTX 3060~): High preset + Quality ini          ::
-::   😄 Mid-low end (RTX 2060~): High preset + Quality ini      ::
+::   😄 Mid-low end (RTX 2060~): High preset + Balanced ini     ::
 ::   😊 Low end (RTX 3050~): Medium preset + Balanced ini       ::
 ::   😐 Very old (GTX 1050~): Medium preset + Performance ini   ::
 ::   💀 (GT 1030~): Low preset + Potato ini                     ::
