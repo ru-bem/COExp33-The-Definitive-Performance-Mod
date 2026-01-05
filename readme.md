@@ -92,11 +92,11 @@ You can lower Shadows, Gi and Folliage for even better performance.<br>
 😐 Very old GPUs (GTX 1050~): **Medium preset + Performance ini**<br>
 💀 (GT 1030~): **Low preset + Potato ini**<br>
 
-Scaling Type priority order: DLSS > XESS > TSR
+Scaling Type priority order: DLSS > FSR > XESS > TSR
 
 <br>
 
-# ⬆️ Update DLSS and XESS
+# ⬆️ Update DLSS, FSR and XESS
 
 Benefits:<br>
 Much better looking upscaling  +  Slightly better performance  +  Less vram usage  +  Less ghosting
