@@ -41,7 +41,7 @@
 ::   😐 Very old (GTX 1050~): Medium preset + Performance ini   ::
 ::   💀 (GT 1030~): Low preset + Potato ini                     ::
 ::                                                              ::
-::   Scaling Type priority order: DLSS > XESS > TSR             ::
+::   Scaling Type priority order: DLSS > FSR > XESS > TSR       ::
 ::                                                              ::
 ::   Have fun!                                                  ::
 ::                                                              ::
